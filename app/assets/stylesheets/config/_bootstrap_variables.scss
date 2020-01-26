@@ -1,0 +1,20 @@
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 $light-gray;
+
+// Bootstrap colors
+$primary:   $blue;
+$secondary: $gray-600;
+$success:   $green;
+$info:      $yellow;
+$danger:    $red;
+$warning:   $orange;
+
+// Buttons & inputs' radius
+$border-radius-sm:   .125rem;
+$border-radius-base: .25rem;
+$border-radius-lg:   .5rem;
+
+// Override other variables below!
+//https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/scss/_variables.scss
