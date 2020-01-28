@@ -1,0 +1,26 @@
+fr:
+  chats:
+    new:
+      title: Envoie ta conversation
+
+  messages_bang: messages ! 🙊
+
+  messages_per_monthes: Évolution du nombre de messages par mois
+  messages_per_authors: Répartition des messages
+
+  helpers:
+    submit:
+      chat:
+        create: Voir les stats !
+
+  try_it: Essayer
+  try_with_another_chat: Essayer avec une autre discussion
+  wow: Whaou !
+  have_sent: ont envoyé
+  and: et
+  most_active: Top des participant·e·s
+  emojis: Emojis analytics 🔍
+  love: Amour
+  animals: Animaux
+  last_analysed_chats: Tes dernières conversations analysées
+  ago: "il y a %{time_ago}"

@@ -1,0 +1,57 @@
+p
+  = t 'wow'
+  =< @authors
+  =< t 'have_sent'
+  span.font-mono.font-semibold.text-xl
+    =< number_with_delimiter @chat.messages_count
+  =< t 'messages_bang'
+
+.mt-8.flex.justify-between
+  .pt-2.bg-blue-800.shadow class="w-1/3"
+    .chart[
+      data-title=(t 'messages_per_authors')
+      data-datasets-title="messages"
+      data-labels=(@truncated_authors)
+      data-values=(@chat.messages_count_by_author)
+      data-chart-type=(JSON.parse(@chat.authors).size > 2 ? "percentage" : "bar")
+      data-chart-colors=(['#F56565', '#ED8936', '#ECC94B', '#ED64A6', '#38B2AC', '#4299E1'].shuffle.to_json)]
+  
+  .px-4.py-2.bg-blue-800.shadow class="w-1/4"
+    .text-xl.font-semibold = t 'most_active'
+    ol.list-decimal
+      - JSON.parse(@chat.authors).zip(JSON.parse(@chat.messages_count_by_author))[0..4].each do |author, messages_count|
+        li.ml-3
+          .flex.justify-between
+            = author
+            .font-mono.font-semibold.ml-2 = messages_count
+
+  .px-4.py-2.bg-blue-800.shadow class="w-1/3"
+    .text-xl.font-semibold = t 'emojis'
+    .flex.justify-between
+      .p-2 class="w-1/2"
+        .font-semibold = t 'love'
+        ol
+          - JSON.parse(@chat.emojis_love_occurences)[0..4].each do |emoji_key, emoji_count|
+            li.flex.align-center.mt-2
+              = image_tag "emojis/#{emoji_key}.png", width: 32
+              .font-mono.font-semibold.text-xl.ml-2 = emoji_count
+
+      .p-2 class="w-1/2"
+        .font-semibold = t 'animals'
+        ol
+          - JSON.parse(@chat.emojis_animals_occurences)[0..4].each do |emoji_key, emoji_count|
+            li.flex.align-center.mt-2
+              = image_tag "emojis/#{emoji_key}.png", width: 32
+              .font-mono.font-semibold.text-xl.ml-2 = emoji_count
+
+.mt-8.pt-2.bg-blue-800.shadow
+  .chart[
+    data-title=(t 'messages_per_monthes')
+    data-datasets-title="messages"
+    data-labels=(@chat.monthes)
+    data-values=(@chat.messages_count_per_month)
+    data-chart-type="line"
+    data-chart-colors=(['#ED64A6'].to_json)]
+
+.mt-8.flex.justify-end
+  = link_to t('try_with_another_chat'), new_chat_path, class: 'btn'

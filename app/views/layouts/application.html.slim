@@ -5,8 +5,10 @@ html
     = csrf_meta_tags
     = csp_meta_tag
 
+    link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
-  body.bg-blue-900
-    = yield
+  body.bg-blue-900.text-blue-100
+    .container.mt-8.mx-auto
+      = yield

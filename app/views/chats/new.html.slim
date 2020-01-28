@@ -1,2 +1,21 @@
-.container.mt-5
-  h1.text-blue-100 Hello
+.flex.justify-between
+  div
+    h2.text-2xl = t '.title'
+
+    = simple_form_for @chat do |chat_form|
+      .mt-4
+        = chat_form.input :raw_chat, label: false
+
+      .mt-2
+        = chat_form.button 'submit', class: 'btn' 
+
+  - if @last_chats.any?
+    div
+      h3.font-semibold.mb-4 = t 'last_analysed_chats'
+      ul
+        - @last_chats.each do |chat|
+          li.flex.justify-between.items-end
+            = link_to chat.uuid, chat_path(chat)
+            
+            .ml-3.text-sm.text-blue-200
+              = t('ago', time_ago: time_ago_in_words(chat.created_at))

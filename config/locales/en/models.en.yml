@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      chat: Chat
+    attributes:
+      chat:
+        raw_chat: Exported chat

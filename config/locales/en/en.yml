@@ -1,0 +1,26 @@
+en:
+  chats:
+    new:
+      title: Upload your chat
+
+  messages_bang: messages! 🙊
+
+  messages_per_monthes: Messages count per month
+  messages_per_authors: Messages per authors
+
+  helpers:
+    submit:
+      chat:
+        create: See the stats!
+
+  try_it: Try it
+  try_with_another_chat: Try with another chat
+  wow: Wow!
+  have_sent: have sent
+  and: and
+  most_active: Top active
+  emojis: Emojis analytics 🔍
+  love: Love
+  animals: Animals
+  last_analysed_chats: Last analysed chats
+  ago: "%{time_ago} ago"

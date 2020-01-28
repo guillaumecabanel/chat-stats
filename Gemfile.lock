@@ -80,6 +80,7 @@ GEM
     ffi (1.12.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    http_accept_language (2.1.1)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -194,6 +195,9 @@ GEM
       tilt
     shoulda-matchers (4.2.0)
       activesupport (>= 4.2.0)
+    simple_form (5.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     simplecov (0.17.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -248,6 +252,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   dotenv-rails
   factory_bot_rails
+  http_accept_language
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
@@ -259,6 +264,7 @@ DEPENDENCIES
   rubocop
   sass-rails (>= 6)
   shoulda-matchers
+  simple_form
   simplecov
   slim-rails
   spring
@@ -268,7 +274,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   2.1.2
+   1.17.3

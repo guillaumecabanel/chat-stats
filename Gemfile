@@ -1,15 +1,19 @@
 source 'https://rubygems.org'
-ruby '2.7.0'
+ruby '2.6.5'
 
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
+
+gem 'http_accept_language'
 
 gem 'slim-rails'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
+
+gem 'simple_form'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

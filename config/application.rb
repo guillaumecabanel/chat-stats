@@ -30,9 +30,10 @@ module ChatStats
       generate.test_framework false
     end
 
+    config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
+    config.i18n.available_locales = [:en, :fr]
     config.i18n.default_locale = :fr
     config.i18n.fallbacks = [:en]
-    config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
