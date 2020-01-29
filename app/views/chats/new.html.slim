@@ -15,7 +15,7 @@
       ul
         - @last_chats.each do |chat|
           li.flex.justify-between.items-end
-            = link_to chat.uuid, chat_path(chat)
+            = link_to chat.uuid, chat_path(chat.uuid)
             
             .ml-3.text-sm.text-blue-200
               = t('ago', time_ago: time_ago_in_words(chat.created_at))
