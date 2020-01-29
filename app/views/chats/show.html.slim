@@ -21,7 +21,7 @@ p
   
   .px-4.py-2.bg-blue-800.shadow class="w-1/4"
     .text-xl.font-semibold = t 'most_active'
-    ol.list-decimal
+    ol.list-decimal.p-2
       - JSON.parse(@chat.authors).zip(JSON.parse(@chat.messages_count_by_author))[0..4].each do |author, messages_count|
         li.ml-3
           .flex.justify-between
@@ -36,7 +36,7 @@ p
         ol
           - JSON.parse(@chat.emojis_love_occurences)[0..4].each do |emoji_key, emoji_count|
             li.flex.align-center.mt-2
-              = image_tag "#{ENV['EMOJIS_ASSETS_URL']}/#{emoji_key}.png", width: 32
+              = emoji_image_tag emoji_key, width: 32
               .font-mono.font-semibold.text-xl.ml-2 = emoji_count
 
       .p-2 class="w-1/2"
@@ -44,7 +44,7 @@ p
         ol
           - JSON.parse(@chat.emojis_animals_occurences)[0..4].each do |emoji_key, emoji_count|
             li.flex.align-center.mt-2
-              = image_tag "#{ENV['EMOJIS_ASSETS_URL']}/#{emoji_key}.png", width: 32
+              = emoji_image_tag emoji_key, width: 32
               .font-mono.font-semibold.text-xl.ml-2 = emoji_count
 
 .mt-8.pt-2.bg-blue-800.shadow

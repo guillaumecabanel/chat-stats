@@ -15,8 +15,8 @@ class EmojisCounterService
   def call
     emojis_occurences = {}
 
-    EMOJIS[@category].each do |name, emoji|
-      emojis_occurences[name] = File.read(@file).count(emoji)
+    EMOJIS[@category].each do |code, emoji|
+      emojis_occurences[code] = File.read(@file).count(emoji[:code])
     end
 
     emojis_occurences.sort_by(&:last).reverse
