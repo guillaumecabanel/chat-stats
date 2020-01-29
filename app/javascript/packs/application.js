@@ -3,6 +3,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import '../css/application.css'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
