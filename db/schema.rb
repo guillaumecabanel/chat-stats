@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_165427) do
+ActiveRecord::Schema.define(version: 2020_01_29_210453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_165427) do
     t.text "authors"
     t.text "emojis_love_occurences"
     t.text "emojis_animals_occurences"
+    t.string "title"
     t.index ["uuid"], name: "index_chats_on_uuid"
   end
 

@@ -1,3 +1,4 @@
+h1.text-2xl.my-5 = @chat.title
 p
   = t 'wow'
   =< @authors
@@ -34,7 +35,7 @@ p
       .p-2 class="w-1/2"
         .font-semibold = t 'love'
         ol
-          - JSON.parse(@chat.emojis_love_occurences)[0..4].each do |emoji_key, emoji_count|
+          - JSON.parse(@chat.emojis_love_occurences).each do |emoji_key, emoji_count|
             li.flex.align-center.mt-2
               = emoji_image_tag emoji_key, width: 32
               .font-mono.font-semibold.text-xl.ml-2 = emoji_count
@@ -42,7 +43,7 @@ p
       .p-2 class="w-1/2"
         .font-semibold = t 'animals'
         ol
-          - JSON.parse(@chat.emojis_animals_occurences)[0..4].each do |emoji_key, emoji_count|
+          - JSON.parse(@chat.emojis_animals_occurences).each do |emoji_key, emoji_count|
             li.flex.align-center.mt-2
               = emoji_image_tag emoji_key, width: 32
               .font-mono.font-semibold.text-xl.ml-2 = emoji_count
@@ -59,5 +60,5 @@ p
 
     .chart data-target="frappe.chart"
 
-.mt-8.flex.justify-end
+.my-8.flex.justify-end
   = link_to t('try_with_another_chat'), new_chat_path, class: 'btn'
