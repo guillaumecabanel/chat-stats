@@ -1,0 +1,11 @@
+svg.frappe-chart text, svg.frappe-chart text.legend-dataset-text {
+  fill: theme('colors.blue.100');
+}
+
+svg.frappe-chart text.title {
+  @apply text-xl font-semibold;
+}
+
+svg.frappe-chart g.axis line {
+  stroke: theme('colors.blue.500') !important;
+}
