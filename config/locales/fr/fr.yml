@@ -24,4 +24,4 @@ fr:
   animals: Animaux
   last_analysed_chats: Tes dernières conversations analysées
   ago: "il y a %{time_ago}"
-  delete: supprimer
+  delete: Enlever de l'historique

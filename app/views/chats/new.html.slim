@@ -1,17 +1,19 @@
-.flex.justify-between
+.px-8.py-4 class="md:flex md:justify-between"
   div
-    h2.text-2xl = t '.title'
+    h2.text-4xl class="md:text-2xl"
+      = t '.title'
 
     = simple_form_for @chat do |chat_form|
       .mt-4
         = chat_form.input :raw_chat, label: false, required: true
 
-      .mt-2
-        = chat_form.button 'submit', class: 'btn' 
+      .mt-8
+        = chat_form.button 'submit', class: 'btn w-full md:w-auto' 
 
   - if @last_chats.any?
     div
-      h3.font-semibold.mb-4 = t 'last_analysed_chats'
+      h3.text-2xl.font-semibold.mt-16.mb-4 class="md:text-base md:mt-0"
+        = t 'last_analysed_chats'
       ul
         - @last_chats.each do |chat|
           li.flex.items-center
@@ -20,5 +22,6 @@
               .text-sm.text-blue-200
                 = t('ago', time_ago: time_ago_in_words(chat.created_at))
 
-            .ml-3.text-sm.text-red-400.flex-none class="hover:text-red-500"
-              = link_to t('delete'), chat_path(chat.uuid), method: :delete
+            .ml-4.text-sm.text-red-400.flex-none class="hover:text-red-500"
+              = link_to chat_path(chat.uuid), method: :delete do
+                i.fad.fa-trash-alt
