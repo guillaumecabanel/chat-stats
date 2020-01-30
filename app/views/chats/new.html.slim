@@ -20,5 +20,5 @@
               .text-sm.text-blue-200
                 = t('ago', time_ago: time_ago_in_words(chat.created_at))
 
-            .ml-3.text-sm.text-red-400.flex-none
+            .ml-3.text-sm.text-red-400.flex-none class="hover:text-red-500"
               = link_to t('delete'), chat_path(chat.uuid), method: :delete

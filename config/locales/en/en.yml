@@ -24,3 +24,4 @@ en:
   animals: Animals
   last_analysed_chats: Last analysed chats
   ago: "%{time_ago} ago"
+  delete: delete
