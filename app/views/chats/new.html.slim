@@ -5,10 +5,15 @@
 
     = simple_form_for @chat do |chat_form|
       .mt-4
-        = chat_form.input :raw_chat, label: false, required: true
+        = chat_form.input :raw_chat, label: false, input_html: { class: params[:error].present? ? 'text-orange-600' : '' }
 
       .mt-8
-        = chat_form.button 'submit', class: 'btn w-full md:w-auto' 
+        = chat_form.button 'submit', class: 'btn w-full md:w-auto'
+      - if params[:error].present?
+        .mt-2
+          .bg-orange-800.text-orange-400.px-4.py-2.rounded
+            i.fad.fa-exclamation-square.fa-swap-opacity
+            =< t(params[:error])
 
   - if @last_chats.any?
     div

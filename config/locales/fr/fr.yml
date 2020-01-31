@@ -25,3 +25,4 @@ fr:
   last_analysed_chats: Tes dernières conversations analysées
   ago: "il y a %{time_ago}"
   delete: Enlever de l'historique
+  error: Une erreur s'est produite

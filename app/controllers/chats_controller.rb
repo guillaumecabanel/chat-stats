@@ -21,9 +21,7 @@ class ChatsController < ApplicationController
       end
     end
     
-    @chat = Chat.new
-    @last_chats = session[:last_chats].present? ? Chat.where(uuid: session[:last_chats]) : []
-    render :new
+    redirect_to new_chat_path(error: 'error')
   end
 
   def show

@@ -25,3 +25,4 @@ en:
   last_analysed_chats: Last analysed chats
   ago: "%{time_ago} ago"
   delete: Remove from history
+  error: An error has occurred
