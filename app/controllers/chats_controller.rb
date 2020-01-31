@@ -11,8 +11,7 @@ class ChatsController < ApplicationController
       
       if @chat.save
         @chat.update(title: @chat.raw_chat.filename.base)
-
-        ::SetStatsFromRawChatService.new(@chat).call
+        SetStatsFromRawChatJob.perform_later @chat
 
         session[:last_chats] ||= []
         session[:last_chats].insert(0, @chat.uuid)
@@ -26,9 +25,17 @@ class ChatsController < ApplicationController
 
   def show
     @chat = Chat.find_by uuid: params[:id]
-    set_authors
-    @truncated_authors = JSON.parse(@chat.authors).map { |author| author.truncate(8, omission: '') }
-    @truncated_authors = @truncated_authors.to_json
+
+    if @chat.stats_present
+      set_authors
+      @truncated_authors = JSON.parse(@chat.authors).map { |author| author.truncate(8, omission: '') }
+      @truncated_authors = @truncated_authors.to_json
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { stats_present: @chat.stats_present }.to_json }
+    end
   end
 
   def destroy

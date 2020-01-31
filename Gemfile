@@ -15,8 +15,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'simple_form'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
+gem 'sidekiq', '~> 6.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

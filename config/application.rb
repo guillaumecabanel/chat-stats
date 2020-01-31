@@ -27,7 +27,6 @@ module ChatStats
       generate.javascripts false
       generate.channel assets: false
       generate.stylesheets false
-      generate.test_framework false
     end
 
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
@@ -45,5 +44,7 @@ module ChatStats
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
