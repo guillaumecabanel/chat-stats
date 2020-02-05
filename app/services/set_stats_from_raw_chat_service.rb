@@ -21,7 +21,7 @@ class SetStatsFromRawChatService
     
     @chat.raw_chat.open do |file|
       File.foreach(file) do |line|
-        matches = line.match /(\d{1,2}\/\d{1,2}\/\d{2,4})[^\d]+(\d{2}:\d{2}) - ([^:]*): (.*)/
+        matches = line.match /\]?(\d{1,2}\/\d{1,2}\/\d{2,4})[^\d]+(\d{2}[:\d{2}]+)\]?[ -]+([^:]*): (.*)/
         next unless matches
       
         @messages << {
@@ -63,7 +63,7 @@ class SetStatsFromRawChatService
 
     authors = ordered_messages_count_by_author.map do |author, message_count|
       # Redact phone numbers
-      if author.match?(/[\d[ ]+?]{8,14}/)
+      if author.match?(/[\d[ ]+]{8,14}/)
         "🤖 #{ordered_messages_count_by_author.index([author, message_count]) + 1}"
       else
         author
