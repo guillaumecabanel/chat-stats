@@ -17,6 +17,7 @@ gem 'simple_form'
 
 gem 'redis', '~> 4.0'
 gem 'sidekiq', '~> 6.0'
+gem 'sidekiq-failures', '~> 1.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
