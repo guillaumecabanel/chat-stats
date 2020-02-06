@@ -21,6 +21,9 @@ gem 'sidekiq-failures', '~> 1.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Active Storage on AWS S3 for production
+gem "aws-sdk-s3", require: false
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
